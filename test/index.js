@@ -1,9 +1,13 @@
 'use strict';
 
-const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
-const util = require('util');
+import assert from 'assert';
+import fs from 'fs';
+import path from 'path';
+import util from 'util';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const test = {
 	group(groupName, build) {
@@ -16,7 +20,7 @@ const test = {
 	},
 };
 
-const readNumeric = require('../');
+import readNumeric from '../index.js';
 
 const truncate = text =>
 	text.replace(/(.{1,4}?)\1{6,}/g, '$1$1…$1$1');

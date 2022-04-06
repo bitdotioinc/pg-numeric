@@ -122,4 +122,4 @@ const readNumeric = buffer => {
 	return isNegativeZero ? result.substring(1) : result;
 };
 
-module.exports = readNumeric;
+export default readNumeric;
